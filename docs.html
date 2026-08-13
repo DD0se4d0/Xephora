@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xephora - Documentación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Xephora<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="docs.html">Documentación</a></li>
+                <li><a href="privacy.html">Privacidad</a></li>
+                <li><a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" class="btn-nav">Añadir a Discord</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="docs-section">
+        <div class="container">
+            <h1 class="section-title">Documentación</h1>
+            <p class="section-subtitle">Xephora separa estrictamente los comandos. Administración usa Slash Commands (/). Usuarios usan Prefix (!).</p>
+
+            <div class="doc-category glass">
+                <h2>Administración <span class="tag tag-slash">SLASH /</span></h2>
+                <div class="command-grid">
+                    <div class="command">
+                        <code>/xephora prefix [prefix]</code>
+                        <p>Configura el prefix para comandos de usuario en el servidor.</p>
+                    </div>
+                    <div class="command">
+                        <code>/xephora language [idioma]</code>
+                        <p>Cambia el idioma del bot (Español / English).</p>
+                    </div>
+                    <div class="command">
+                        <code>/economy currency set</code>
+                        <p>Personaliza el singular, plural y emoji de la moneda.</p>
+                    </div>
+                    <div class="command">
+                        <code>/economy give @user [cantidad]</code>
+                        <p>Da Caps a un usuario.</p>
+                    </div>
+                    <div class="command">
+                        <code>/kick @user [razón]</code>
+                        <p>Expulsa a un usuario del servidor.</p>
+                    </div>
+                    <div class="command">
+                        <code>/ban @user [razón]</code>
+                        <p>Banea a un usuario del servidor.</p>
+                    </div>
+                    <div class="command">
+                        <code>/logs setup #canal</code>
+                        <p>Configura el canal de logs del servidor.</p>
+                    </div>
+                    <div class="command">
+                        <code>/welcome setup #canal</code>
+                        <p>Configura el mensaje de bienvenida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-category glass">
+                <h2>Usuario <span class="tag tag-prefix">PREFIX !</span></h2>
+                <div class="command-grid">
+                    <div class="command">
+                        <code>!help</code>
+                        <p>Muestra la lista de comandos disponibles.</p>
+                    </div>
+                    <div class="command">
+                        <code>!balance</code>
+                        <p>Muestra tu balance de Caps.</p>
+                    </div>
+                    <div class="command">
+                        <code>!daily</code>
+                        <p>Reclama tu recompensa diaria de Caps.</p>
+                    </div>
+                    <div class="command">
+                        <code>!work</code>
+                        <p>Trabaja para ganar Caps.</p>
+                    </div>
+                    <div class="command">
+                        <code>!pay @user [cantidad]</code>
+                        <p>Transfiere Caps a otro usuario.</p>
+                    </div>
+                    <div class="command">
+                        <code>!coinflip [cantidad]</code>
+                        <p>Apuesta tus Caps lanzando una moneda.</p>
+                    </div>
+                    <div class="command">
+                        <code>!afk [razón]</code>
+                        <p>Establece tu estado AFK global.</p>
+                    </div>
+                    <div class="command">
+                        <code>!roblox [usuario]</code>
+                        <p>Busca información pública de un usuario de Roblox.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Xephora. Diseñado para Discord.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
