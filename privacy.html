@@ -1,129 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zephora — política de privacidad</title>
-<meta name="description" content="Política de Privacidad de Zephora, un bot de Discord.">
-<style>
-  :root{
-    --bg:#0c0c0c; --surface:#161616; --ink:#f2efec; --ink-soft:#a6a19b;
-    --line:#2b2b2b; --red:#c0392b; --red-bright:#e6483a; --radius:14px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg); color:var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--red-bright); text-decoration:underline; text-underline-offset:3px;}
-  .wrap{ max-width:720px; margin:0 auto; padding:0 24px; }
-  header{ padding:24px 0; border-bottom:1px solid var(--line); }
-  .head-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
-  .wordmark{ font-family: Georgia, 'Times New Roman', ui-serif, serif; font-weight:700; font-size:1.1rem; }
-  .wordmark span{ color:var(--red-bright); }
-  .nav-links{ display:flex; align-items:center; gap:18px; }
-  .nav-links a{ font-size:0.86rem; color:var(--ink-soft); text-decoration:none; }
-  .nav-links a:hover{ color:var(--ink); }
-  main{ padding:48px 0 80px; }
-  .eyebrow{
-    font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;
-    color:var(--red-bright); margin-bottom:14px;
-  }
-  h1{
-    font-family: Georgia, 'Times New Roman', ui-serif, serif;
-    font-weight:700; font-size:clamp(2rem, 5vw, 2.6rem); margin-bottom:8px;
-  }
-  .updated{ color:var(--ink-soft); font-size:0.85rem; margin-bottom:36px; }
-  section{ padding:28px 0; border-top:1px solid var(--line); }
-  section:first-of-type{ border-top:none; padding-top:0; }
-  h2{ font-size:1.15rem; margin-bottom:12px; }
-  p, li{ color:var(--ink-soft); font-size:0.96rem; }
-  ul{ padding-left:20px; margin-top:8px; display:flex; flex-direction:column; gap:6px; }
-  table{ width:100%; border-collapse:collapse; margin-top:10px; font-size:0.9rem; }
-  th{ text-align:left; color:var(--ink); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; padding:6px 8px; border-bottom:1px solid var(--line); }
-  td{ padding:8px; border-bottom:1px solid var(--line); color:var(--ink-soft); }
-  .note{
-    margin-top:36px;
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-    padding:16px 18px; font-size:0.85rem; color:var(--ink-soft);
-  }
-  footer{
-    padding:40px 0 60px; border-top:1px solid var(--line);
-    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
-    color:var(--ink-soft); font-size:0.85rem;
-  }
-  footer .foot-links{ display:flex; gap:16px; flex-wrap:wrap; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xephora - Política de Privacidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Xephora<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="docs.html">Documentación</a></li>
+                <li><a href="privacy.html">Privacidad</a></li>
+                <li><a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" class="btn-nav">Añadir a Discord</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<header>
-  <div class="wrap head-inner">
-    <div class="wordmark">zephora<span>.</span></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="docs.html">Docs</a>
-      <a href="terms.html">Condiciones</a>
-    </div>
-  </div>
-</header>
+    <section class="docs-section">
+        <div class="container">
+            <h1 class="section-title">Política de Privacidad</h1>
+            <div class="glass privacy-content">
+                <p>En Xephora, tomamos tu privacidad en serio. Este documento detalla qué datos almacenamos y cómo los utilizamos.</p>
+                
+                <h3>Datos Almacenados</h3>
+                <ul>
+                    <li><strong>ID de Servidor (Guild ID):</strong> Utilizado para guardar configuraciones independientes como prefix, idioma y canales.</li>
+                    <li><strong>ID de Usuario (User ID):</strong> Utilizado para rastrear balances de economía, niveles, advertencias y estado AFK.</li>
+                    <li><strong>Configuraciones de Servidor:</strong> Mensajes personalizados, configuraciones de moneda (Caps), y roles autorizados.</li>
+                </ul>
 
-<main class="wrap">
-  <div class="eyebrow">Legal</div>
-  <h1>Política de Privacidad</h1>
-  <p class="updated">Describe qué datos usa Zephora y para qué, según su funcionamiento actual.</p>
+                <h3>Integración con Roblox</h3>
+                <p>Nuestra funcionalidad de búsqueda de Roblox utiliza exclusivamente endpoints de API públicos. <strong>Nunca</strong> solicitamos contraseñas, cookies de sesión, tokens de autenticación o credenciales privadas de Roblox o de Discord.</p>
 
-  <section>
-    <h2>1. Qué datos procesa Zephora</h2>
-    <p>Para funcionar, Zephora almacena únicamente lo necesario para sus comandos, siempre asociado a IDs técnicos de Discord (nunca a datos personales fuera de la plataforma):</p>
-    <table>
-      <tr><th>Dato</th><th>Para qué se usa</th></tr>
-      <tr><td>ID del servidor (guild)</td><td>Guardar el idioma y el prefijo configurados para ese servidor.</td></tr>
-      <tr><td>ID del usuario de Discord</td><td>Asociar el saldo de Cap-Caps (wallet y banco) a cada usuario, por servidor.</td></tr>
-      <tr><td>Saldo de Cap-Caps</td><td>Llevar el estado de la economía virtual y del blackjack.</td></tr>
-    </table>
-  </section>
+                <h3>Eliminación de Datos</h3>
+                <p>Los administradores del servidor pueden restablecer la configuración del bot utilizando los comandos administrativos. Los usuarios que deseen que se elimine su información de economía o niveles pueden solicitar a un administrador que utilice el comando <code>/economy remove</code>.</p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>2. Qué NO recolecta Zephora</h2>
-    <ul>
-      <li>No lee ni almacena el contenido de tus mensajes.</li>
-      <li>No solicita contraseñas, tokens ni credenciales de ninguna cuenta.</li>
-      <li>No comparte ni vende datos a terceros.</li>
-      <li>No procesa pagos ni datos financieros reales — Cap-Caps es una moneda virtual sin valor monetario.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>3. Dónde se almacenan los datos</h2>
-    <p>La configuración por servidor y los saldos de Cap-Caps se guardan de forma persistente para que no se pierdan cuando el bot se reinicia, y se identifican siempre por el ID del servidor y del usuario, nunca por nombre real ni información personal adicional.</p>
-  </section>
-
-  <section>
-    <h2>4. Eliminación de datos</h2>
-    <p>Si un administrador expulsa a Zephora de su servidor, deja de generarse actividad nueva para ese servidor. Para solicitar la eliminación de datos existentes, contactar al responsable del proyecto por los medios indicados más abajo.</p>
-  </section>
-
-  <section>
-    <h2>5. Cambios a esta política</h2>
-    <p>Esta política puede actualizarse a medida que Zephora incorpore nuevas funcionalidades. Cualquier cambio relevante en el tipo de datos procesados se reflejará aquí.</p>
-  </section>
-
-  <div class="note">
-    Pendiente de completar antes de publicar: datos de contacto del responsable del proyecto para solicitudes de privacidad. No se incluyen aquí porque no fueron provistos.
-  </div>
-</main>
-
-<footer class="wrap">
-  <span>Zephora — proyecto en desarrollo.</span>
-  <div class="foot-links">
-    <a href="index.html">inicio</a>
-    <a href="docs.html">documentación</a>
-    <a href="terms.html">condiciones del servicio</a>
-  </div>
-</footer>
-
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Xephora. Diseñado para Discord.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
