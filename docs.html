@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs — Xephora</title>
+<meta name="description" content="Documentación completa de Xephora: comandos, módulos y configuración.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge">X</span>
+      Xephora
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="commands.html">Commands</a>
+      <a href="docs.html" class="active">Docs</a>
+      <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema"></button>
+      <a href="#" class="btn btn-primary invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
+    <button class="theme-toggle" id="mobileMenuClose" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="commands.html">Commands</a>
+  <a href="docs.html">Docs</a>
+  <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+  <a href="#" class="btn btn-primary btn-block invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+</div>
+
+<header class="page-header wrap">
+  <div class="eyebrow" style="margin:0 auto;">Documentation</div>
+  <h1>Documentación</h1>
+  <p>Guía completa de todos los módulos y comandos de Xephora.</p>
+</header>
+
+<div class="docs-shell">
+  <aside class="docs-sidebar" id="docsSidebar">
+    <div class="docs-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="docsSearch" placeholder="Buscar comandos, categorías...">
+    </div>
+    <nav id="docsNav"></nav>
+  </aside>
+
+  <main class="docs-main">
+    <button class="docs-sidebar-toggle" id="docsSidebarToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      Categorías
+    </button>
+    <div id="docsContent"></div>
+    <div class="docs-search-empty" id="docsEmpty" style="display:none;">No se encontraron resultados.</div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
+      <p>Bot de Discord potente y totalmente configurable: economía, niveles, juegos, bienvenidas, logs y moderación.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="commands.html">Commands</a>
+        <a href="docs.html">Docs</a>
+        <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Xephora. Todos los derechos reservados.</span>
+    <span>Made for Discord</span>
+  </div>
+</footer>
+
+<script src="commands-data.js"></script>
+<script src="app.js"></script>
+<script>
+  function tagFor(access){
+    if(access === "admin") return '<span class="tag tag-admin">Admin</span>';
+    if(access === "owner") return '<span class="tag tag-owner">Owner</span>';
+    return '<span class="tag">User</span>';
+  }
+
+  function renderDocCommand(cmd){
+    var isCopyable = cmd.type !== "link";
+    var row = document.createElement("div");
+    row.className = "cmd-item";
+    row.innerHTML =
+      '<div class="cmd-main">' +
+        '<span class="cmd-name">'+cmd.name+'</span>' +
+        '<span class="cmd-desc">'+cmd.desc+'</span>' +
+      '</div>' +
+      '<div class="cmd-meta">' +
+        tagFor(cmd.access) +
+        (isCopyable ? '<button class="copy-btn" data-label="Copy">'+xephoraCopyIconSvg()+'<span>Copy</span></button>' : '') +
+      '</div>';
+    if(isCopyable){
+      var btn = row.querySelector(".copy-btn");
+      var rawCmd = cmd.name.split(" ")[0];
+      btn.addEventListener("click", function(){ xephoraCopyCommand(btn, rawCmd); });
+    }
+    return row;
+  }
+
+  function renderCategory(cat){
+    var section = document.createElement("section");
+    section.className = "docs-category";
+    section.id = cat.id;
+    var head = document.createElement("div");
+    head.className = "docs-category-head";
+    head.innerHTML = '<h2>'+cat.label+'</h2>';
+    section.appendChild(head);
+    var desc = document.createElement("p");
+    desc.className = "docs-category-desc";
+    desc.textContent = cat.desc;
+    section.appendChild(desc);
+    var list = document.createElement("div");
+    list.className = "cmd-list";
+    cat.commands.forEach(function(c){ list.appendChild(renderDocCommand(c)); });
+    section.appendChild(list);
+    return section;
+  }
+
+  var content = document.getElementById("docsContent");
+  XEPHORA_CATEGORIES.forEach(function(cat){
+    content.appendChild(renderCategory(cat));
+  });
+
+  var nav = document.getElementById("docsNav");
+  XEPHORA_CATEGORIES.forEach(function(cat, idx){
+    var group = document.createElement("div");
+    group.className = "docs-nav-group";
+    var a = document.createElement("a");
+    a.href = "#"+cat.id;
+    a.className = "docs-nav-cat" + (idx === 0 ? " active" : "");
+    a.textContent = cat.label;
+    a.dataset.target = cat.id;
+    group.appendChild(a);
+    nav.appendChild(group);
+  });
+
+  document.querySelectorAll(".docs-nav-cat").forEach(function(link){
+    link.addEventListener("click", function(){
+      document.querySelectorAll(".docs-nav-cat").forEach(function(l){ l.classList.remove("active"); });
+      link.classList.add("active");
+      document.getElementById("docsSidebar").classList.remove("open");
+    });
+  });
+
+  var toggle = document.getElementById("docsSidebarToggle");
+  if(toggle){
+    toggle.addEventListener("click", function(){
+      document.getElementById("docsSidebar").classList.toggle("open");
+    });
+  }
+
+  var searchInput = document.getElementById("docsSearch");
+  var emptyState = document.getElementById("docsEmpty");
+  searchInput.addEventListener("input", function(){
+    var q = searchInput.value.trim().toLowerCase();
+    var anyVisible = false;
+    document.querySelectorAll(".docs-category").forEach(function(section){
+      var catId = section.id;
+      var cat = XEPHORA_CATEGORIES.find(function(c){ return c.id === catId; });
+      if(!q){
+        section.style.display = "block";
+        anyVisible = true;
+        return;
+      }
+      var catMatches = cat.label.toLowerCase().indexOf(q) > -1 || cat.desc.toLowerCase().indexOf(q) > -1;
+      var items = section.querySelectorAll(".cmd-item");
+      var anyItemMatch = false;
+      items.forEach(function(item, i){
+        var cmd = cat.commands[i];
+        var match = cmd.name.toLowerCase().indexOf(q) > -1 || cmd.desc.toLowerCase().indexOf(q) > -1;
+        item.style.display = (catMatches || match) ? "flex" : "none";
+        if(match) anyItemMatch = true;
+      });
+      var visible = catMatches || anyItemMatch;
+      section.style.display = visible ? "block" : "none";
+      if(visible) anyVisible = true;
+    });
+    emptyState.style.display = anyVisible ? "none" : "block";
+  });
+</script>
+</body>
+</html>

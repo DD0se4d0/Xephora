@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xephora — Discord Bot</title>
+<meta name="description" content="Xephora, un bot de Discord potente y totalmente configurable: economía, niveles, juegos, bienvenidas, logs y más.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-badge">X</span>
+      Xephora
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="commands.html">Commands</a>
+      <a href="docs.html">Docs</a>
+      <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema"></button>
+      <a href="#" class="btn btn-primary invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
+    <button class="theme-toggle" id="mobileMenuClose" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="commands.html">Commands</a>
+  <a href="docs.html">Docs</a>
+  <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+  <a href="#" class="btn btn-primary btn-block invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow"><span class="dot"></span>Online 24/7</div>
+    <h1 class="hero-title">XEPHORA<span class="ghost" aria-hidden="true">XEPHORA</span></h1>
+    <p class="hero-tag">Powerful Discord bot for fully configurable servers</p>
+    <p class="hero-desc">Economía propia, niveles, juegos, bienvenidas, mensajes automáticos, logs y moderación — todo configurable servidor por servidor, en inglés y español.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+      <a href="commands.html" class="btn btn-ghost">Ver comandos</a>
+    </div>
+    <div class="hero-strip">
+      <span class="pill">Multi-server</span>
+      <span class="pill">Fully configurable</span>
+      <span class="pill">Economy</span>
+      <span class="pill">Levels</span>
+      <span class="pill">Games</span>
+      <span class="pill">Welcome</span>
+      <span class="pill">AutoMessage</span>
+      <span class="pill">AutoRespond</span>
+      <span class="pill">AFK</span>
+      <span class="pill">Invites</span>
+      <span class="pill">Roblox</span>
+      <span class="pill">Logs</span>
+      <span class="pill">Moderation</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Features</div>
+      <h2 class="section-title">Todo lo que tu servidor <span class="accent">necesita</span></h2>
+      <p class="section-desc">Cada módulo de Xephora se activa y configura de forma independiente por servidor.</p>
+    </div>
+    <div class="grid grid-4" id="featureGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="economy">
+  <div class="wrap">
+    <div class="economy-panel">
+      <div>
+        <div class="eyebrow">Economy</div>
+        <h2 style="font-size:clamp(28px,4vw,40px);margin-top:16px;">Cap-Caps, la moneda de tu servidor</h2>
+        <p style="margin-top:14px;">Por defecto, la economía de Xephora usa <b style="color:var(--gold-bright)">Cap</b> / <b style="color:var(--gold-bright)">Caps</b> como moneda. Pero "Caps" es solo el nombre predeterminado.</p>
+        <ul class="economy-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>Nombre <b>singular</b> personalizable (ej. "Credit")</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>Nombre <b>plural</b> personalizable (ej. "Credits")</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><b>Emoji</b> personalizable para representar la moneda</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>Wallet y banco independientes por usuario y servidor</span></li>
+        </ul>
+      </div>
+      <div class="currency-demo">
+        <div class="currency-row">
+          <span class="cname">SERVIDOR A — predeterminado</span>
+          <span class="cval">1 Cap</span>
+        </div>
+        <div class="currency-row">
+          <span class="cname">SERVIDOR A — predeterminado</span>
+          <span class="cval">500 Caps</span>
+        </div>
+        <div class="currency-row">
+          <span class="cname">SERVIDOR B — personalizado</span>
+          <span class="cval">1 Credit</span>
+        </div>
+        <div class="currency-row">
+          <span class="cname">SERVIDOR B — personalizado</span>
+          <span class="cval">500 Credits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="levels">
+  <div class="wrap">
+    <div class="feature-block" style="border-top:none;padding-top:0;">
+      <div class="feature-copy">
+        <div class="eyebrow">Levels</div>
+        <h3>XP, niveles y rankings por servidor</h3>
+        <p>Cada miembro gana experiencia y sube de nivel de forma completamente independiente en cada servidor donde esté Xephora.</p>
+        <ul>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>XP acumulable por actividad</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Niveles y rangos independientes por servidor</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Leaderboard con !rank</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="mock-line"><b>!level</b> → Nivel 12 · 2.340 / 3.000 XP</div>
+        <div class="mock-line"><b>!rank</b> → #4 en el servidor</div>
+        <div class="mock-line"><b>/levels</b> → Panel de configuración (admin)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="games">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Games</div>
+      <h2 class="section-title">Juegos con tu <span class="accent">economía</span></h2>
+      <p class="section-desc">Los miembros pueden apostar Caps directamente en los juegos habilitados del servidor.</p>
+    </div>
+    <div class="grid grid-3" id="gamesGrid"></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="feature-block">
+    <div class="feature-copy">
+      <div class="eyebrow">Welcome</div>
+      <h3>Bienvenidas a tu medida</h3>
+      <p>Da la bienvenida a los nuevos miembros con mensajes completamente personalizables.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Mensajes de bienvenida por texto o embed</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Canal personalizable</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Variables dinámicas en el mensaje</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line">👋 Bienvenido/a <b>{user}</b> a <b>{server}</b>!</div>
+      <div class="mock-line">Sos el miembro número <b>{count}</b></div>
+      <div class="mock-line">/welcome → Configuración (admin)</div>
+    </div>
+  </div>
+
+  <div class="feature-block reverse">
+    <div class="feature-copy">
+      <div class="eyebrow">AutoMessage</div>
+      <h3>Mensajes automáticos programados</h3>
+      <p>Programa mensajes que se envían automáticamente en intervalos definidos.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Intervalos configurables</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Múltiples mensajes en rotación aleatoria</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Soporte para embeds</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line">Cada <b>60 min</b> → Canal #anuncios</div>
+      <div class="mock-line">Mensaje aleatorio de la lista configurada</div>
+      <div class="mock-line">/automessage → Configuración (admin)</div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-copy">
+      <div class="eyebrow">AutoRespond</div>
+      <h3>Respuestas automáticas</h3>
+      <p>Configura triggers para que Xephora responda automáticamente en el chat.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Coincidencia exacta o "contiene"</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Respuestas aleatorias entre varias opciones</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Configuración por servidor</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line">Trigger: <b>"hola"</b> → Respuesta aleatoria</div>
+      <div class="mock-line">Trigger contiene: <b>"soporte"</b></div>
+      <div class="mock-line">/autorespond → Configuración (admin)</div>
+    </div>
+  </div>
+
+  <div class="feature-block reverse">
+    <div class="feature-copy">
+      <div class="eyebrow">AFK</div>
+      <h3>Sistema AFK global</h3>
+      <p>Marca tu estado como ausente con <code>!afk</code> y Xephora avisará automáticamente a quienes te mencionen mientras estás fuera.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Estado AFK con motivo opcional</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Se remueve automáticamente al volver a escribir</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line"><b>!afk</b> Estoy comiendo 🍔</div>
+      <div class="mock-line">@usuario está AFK: Estoy comiendo 🍔</div>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-copy">
+      <div class="eyebrow">Invites</div>
+      <h3>Seguimiento de invitaciones</h3>
+      <p>Xephora rastrea cada invitación del servidor con detalle.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Invites reales y falsas (fake)</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Salidas (leaves) y bonus</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Leaderboard de invitaciones</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line"><b>!invites</b> → 24 reales · 2 falsas · 1 salida</div>
+      <div class="mock-line">Leaderboard de invitaciones del servidor</div>
+    </div>
+  </div>
+
+  <div class="feature-block reverse">
+    <div class="feature-copy">
+      <div class="eyebrow">Roblox</div>
+      <h3>Integración con Roblox</h3>
+      <p>Vincula tu cuenta de Roblox y consulta tu información directamente desde Discord, mediante comandos con prefix.</p>
+      <ul>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Vinculación de cuenta de Roblox</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Disponible por comandos de prefix</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mock-line"><b>!roblox</b> → Muestra tu cuenta vinculada</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="logs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Logs</div>
+      <h2 class="section-title">Registro total de tu <span class="accent">servidor</span></h2>
+      <p class="section-desc">Configura qué eventos se registran y en qué canal, con /logs.</p>
+    </div>
+    <div class="grid grid-4" id="logsGrid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="economy-panel" style="grid-template-columns:1fr;text-align:center;">
+      <div>
+        <div class="eyebrow" style="margin:0 auto;">Get started</div>
+        <h2 style="font-size:clamp(28px,4vw,40px);margin-top:16px;">Llevá tu servidor al siguiente nivel</h2>
+        <p style="margin:14px auto 0;max-width:480px;">Invitá a Xephora ahora y empezá a configurar economía, niveles, juegos y más en minutos.</p>
+        <div class="hero-actions" style="margin-top:26px;">
+          <a href="#" class="btn btn-primary invite-link" target="_blank" rel="noopener">Invite Xephora</a>
+          <a href="docs.html" class="btn btn-ghost">Leer documentación</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
+      <p>Bot de Discord potente y totalmente configurable: economía, niveles, juegos, bienvenidas, logs y moderación.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="commands.html">Commands</a>
+        <a href="docs.html">Docs</a>
+        <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Xephora. Todos los derechos reservados.</span>
+    <span>Made for Discord</span>
+  </div>
+</footer>
+
+<script src="commands-data.js"></script>
+<script src="app.js"></script>
+<script>
+  var FEATURES = [
+    { t:"Multi-server", d:"Configuración totalmente independiente en cada servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/></svg>' },
+    { t:"Fully configurable", d:"Cada módulo se activa y ajusta según las necesidades del servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>' },
+    { t:"Economy", d:"Sistema Cap-Caps con wallet y banco, personalizable por servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1 2.5 2c0 2-5 1.5-5 3.5 0 1 1.1 2 2.5 2s2.5-1.1 2.5-2.5"/></svg>' },
+    { t:"Levels", d:"XP, niveles y rankings independientes por servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h4v-6H3v6zM10 20h4V10h-4v10zM17 20h4V4h-4v16z"/></svg>' },
+    { t:"Games", d:"Blackjack y más juegos con la economía del servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="7" height="14" rx="1.5" transform="rotate(-10 6.5 14)"/><rect x="13" y="3" width="8" height="16" rx="1.5"/></svg>' },
+    { t:"Welcome", d:"Mensajes de bienvenida personalizables con embeds y variables.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg>' },
+    { t:"AutoMessage", d:"Mensajes automáticos en intervalos definidos.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>' },
+    { t:"AutoRespond", d:"Respuestas automáticas por triggers configurables.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' },
+    { t:"AFK", d:"Marca tu ausencia y avisa automáticamente a quienes te mencionen.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M9 9h.01M9 15h.01"/></svg>' },
+    { t:"Invites", d:"Rastrea invitaciones reales, falsas, salidas y bonus.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M18 8v6M15 11h6"/></svg>' },
+    { t:"Roblox", d:"Vinculación de cuenta de Roblox mediante comandos de prefix.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" transform="rotate(15 12 12)"/></svg>' },
+    { t:"Logs", d:"Registro configurable de eventos del servidor.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>' },
+    { t:"Moderation", d:"Kick, ban, timeout, warns y bypass de restricciones.", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>' }
+  ];
+  var grid = document.getElementById("featureGrid");
+  FEATURES.forEach(function(f){
+    var el = document.createElement("div");
+    el.className = "card";
+    el.innerHTML = '<div class="card-icon">'+f.i+'</div><h3>'+f.t+'</h3><p>'+f.d+'</p>';
+    grid.appendChild(el);
+  });
+
+  var GAMES = [
+    { name:"Blackjack", live:true, desc:"Apuesta mínima 10 Caps. Contra el dealer, con As dinámico." },
+    { name:"Poker", live:false, desc:"Módulo de póker con la economía del servidor." },
+    { name:"Coinflip", live:false, desc:"Cara o cruz apostando Caps." },
+    { name:"Dice", live:false, desc:"Tira los dados y apuesta tus Caps." },
+    { name:"Slots", live:false, desc:"Máquina tragamonedas del servidor." },
+    { name:"Roulette", live:false, desc:"Ruleta clásica con apuestas en Caps." }
+  ];
+  var gamesGrid = document.getElementById("gamesGrid");
+  GAMES.forEach(function(g){
+    var el = document.createElement("div");
+    el.className = "card game-card";
+    el.innerHTML = '<div class="coin">$</div><h3>'+g.name+'</h3><p>'+g.desc+'</p>'+(g.live ? '<span class="badge-live">Disponible</span>' : '<span class="badge-soon">Próximamente</span>');
+    gamesGrid.appendChild(el);
+  });
+
+  var logsGrid = document.getElementById("logsGrid");
+  LOG_TYPES.forEach(function(l){
+    var el = document.createElement("div");
+    el.className = "log-chip";
+    el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>'+l;
+    logsGrid.appendChild(el);
+  });
+</script>
+</body>
+</html>
