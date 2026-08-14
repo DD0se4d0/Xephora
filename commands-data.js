@@ -1,4 +1,4 @@
-const XEPHORA_INVITE_URL = "https://discord.com/oauth2/authorize?client_id=REPLACE_CLIENT_ID&permissions=8&scope=bot%20applications.commands";
+const XEPHORA_INVITE_URL = "https://discord.com/oauth2/authorize?client_id=1535354904770519050&permissions=8&scope=bot%20applications.commands";
 const XEPHORA_DEFAULT_PREFIX = "!";
 
 const XEPHORA_CATEGORIES = [
