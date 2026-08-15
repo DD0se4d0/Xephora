@@ -1,152 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commands — Xephora</title>
-<meta name="description" content="Todos los comandos de Xephora, separados en User, Admin y Owner.">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands — Xephora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <span class="brand-badge">X</span>
-      Xephora
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="commands.html" class="active">Commands</a>
-      <a href="docs.html">Docs</a>
-      <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
-    </div>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema"></button>
-      <a href="#" class="btn btn-primary invite-link" target="_blank" rel="noopener">Invite Xephora</a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.imgur.com/8X6H8QK.png" alt="Xephora Logo" class="logo-img">
+                <span>Xephora</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="commands.html">Commands</a>
+                <a href="index.html#variables">Variables</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">Support</a>
+                <a href="#" class="btn btn-primary">Add to Discord</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-top">
-    <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
-    <button class="theme-toggle" id="mobileMenuClose" aria-label="Cerrar menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-  </div>
-  <a href="index.html">Home</a>
-  <a href="commands.html">Commands</a>
-  <a href="docs.html">Docs</a>
-  <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
-  <a href="#" class="btn btn-primary btn-block invite-link" target="_blank" rel="noopener">Invite Xephora</a>
-</div>
+    <section class="page-header">
+        <div class="container">
+            <h1>Comandos</h1>
+            <p>Explora todos los comandos disponibles para usuarios y administradores.</p>
+        </div>
+    </section>
 
-<header class="page-header wrap">
-  <div class="eyebrow" style="margin:0 auto;">Commands</div>
-  <h1>Todos los comandos</h1>
-  <p>Los comandos de usuario usan el prefix del servidor (por defecto <code>!</code>). Los comandos de administración son Slash Commands. Los comandos owner usan el prefix fijo <code>.</code></p>
-</header>
+    <section class="commands-section">
+        <div class="container">
+            <div class="commands-controls">
+                <input type="text" id="searchInput" placeholder="Buscar comando..." class="search-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="user">Usuario</button>
+                    <button class="filter-btn" data-filter="admin">Admin</button>
+                </div>
+            </div>
 
-<div class="wrap">
-  <div class="cmd-tabs" id="cmdTabs">
-    <button class="cmd-tab active" data-target="user">User Commands</button>
-    <button class="cmd-tab" data-target="admin">Admin Commands</button>
-    <button class="cmd-tab" data-target="owner">Owner Commands</button>
-  </div>
+            <div id="commandsGrid" class="commands-grid">
+            </div>
+        </div>
+    </section>
 
-  <section id="panel-user"></section>
-  <section id="panel-admin" style="display:none;"></section>
-  <section id="panel-owner" style="display:none;"></section>
-</div>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3>XEPHORA</h3>
+                <p>Your Discord, Smarter.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="commands.html">Commands</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Xephora. All rights reserved.</p>
+        </div>
+    </footer>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="brand"><span class="brand-badge">X</span>Xephora</a>
-      <p>Bot de Discord potente y totalmente configurable: economía, niveles, juegos, bienvenidas, logs y moderación.</p>
-    </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="index.html">Home</a>
-        <a href="commands.html">Commands</a>
-        <a href="docs.html">Docs</a>
-        <a href="#" class="invite-link" target="_blank" rel="noopener">Invite</a>
-      </div>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>© 2026 Xephora. Todos los derechos reservados.</span>
-    <span>Made for Discord</span>
-  </div>
-</footer>
-
-<script src="commands-data.js"></script>
-<script src="app.js"></script>
-<script>
-  function tagFor(access){
-    if(access === "admin") return '<span class="tag tag-admin">Admin</span>';
-    if(access === "owner") return '<span class="tag tag-owner">Owner</span>';
-    return '<span class="tag">User</span>';
-  }
-
-  function renderCommandItem(cmd){
-    var isCopyable = cmd.type !== "link";
-    var row = document.createElement("div");
-    row.className = "cmd-item";
-    row.innerHTML =
-      '<div class="cmd-main">' +
-        '<span class="cmd-name">'+cmd.name+'</span>' +
-        '<span class="cmd-desc">'+cmd.desc+'</span>' +
-      '</div>' +
-      '<div class="cmd-meta">' +
-        tagFor(cmd.access) +
-        (isCopyable ? '<button class="copy-btn" data-label="Copy">'+xephoraCopyIconSvg()+'<span>Copy</span></button>' : '') +
-      '</div>';
-    if(isCopyable){
-      var btn = row.querySelector(".copy-btn");
-      var rawCmd = cmd.name.split(" ")[0];
-      btn.addEventListener("click", function(){ xephoraCopyCommand(btn, rawCmd); });
-    }
-    return row;
-  }
-
-  function buildPanel(containerId, accessFilter){
-    var container = document.getElementById(containerId);
-    XEPHORA_CATEGORIES.forEach(function(cat){
-      var items = cat.commands.filter(function(c){ return c.access === accessFilter; });
-      if(items.length === 0) return;
-      var group = document.createElement("div");
-      group.className = "cmd-group";
-      var title = document.createElement("div");
-      title.className = "cmd-group-title";
-      title.textContent = cat.label;
-      group.appendChild(title);
-      var list = document.createElement("div");
-      list.className = "cmd-list";
-      items.forEach(function(c){ list.appendChild(renderCommandItem(c)); });
-      group.appendChild(list);
-      container.appendChild(group);
-    });
-  }
-
-  buildPanel("panel-user", "user");
-  buildPanel("panel-admin", "admin");
-  buildPanel("panel-owner", "owner");
-
-  document.querySelectorAll(".cmd-tab").forEach(function(tab){
-    tab.addEventListener("click", function(){
-      document.querySelectorAll(".cmd-tab").forEach(function(t){ t.classList.remove("active"); });
-      tab.classList.add("active");
-      ["user","admin","owner"].forEach(function(k){
-        document.getElementById("panel-"+k).style.display = (k === tab.dataset.target) ? "block" : "none";
-      });
-    });
-  });
-</script>
+    <script src="commands.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
