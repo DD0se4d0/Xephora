@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comandos — Xephora</title>
+<meta name="description" content="Referencia completa de comandos de Xephora: economía, juegos, niveles, social, Roblox, moderación y configuración.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================= NAV ============================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">X</span>
+      Xephora
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#features">Funciones</a></li>
+      <li><a href="index.html#economy">Economía</a></li>
+      <li><a href="index.html#games">Juegos</a></li>
+      <li><a href="docs.html">Comandos</a></li>
+      <li><a href="index.html#config">Configuración</a></li>
+      <li><a href="index.html#support">Soporte</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="index.html#support" class="btn btn-ghost btn-sm">Soporte</a>
+      <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+      <a href="#" class="btn btn-primary btn-sm">Añadir a Discord</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================= DOCS HERO ============================= -->
+<header class="docs-hero">
+  <div class="container">
+    <span class="eyebrow">Referencia</span>
+    <h1>Comandos</h1>
+    <p>Todos los comandos disponibles para miembros y administradores. Usa el buscador o filtra por tipo.</p>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="docs-search" placeholder="Buscar un comando… ej. balance, kick, roblox" autocomplete="off">
+      <span class="search-count" id="search-count">50 comandos</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= DOCS BODY ============================= -->
+<section class="docs-body">
+  <div class="container">
+    <div class="docs-layout">
+
+      <!-- Sidebar -->
+      <nav class="docs-nav" aria-label="Categorías de comandos">
+        <div class="docs-nav-label">Usuario</div>
+        <a href="#cat-general">General</a>
+        <a href="#cat-economy">Economía</a>
+        <a href="#cat-games">Juegos</a>
+        <a href="#cat-levels">Levels</a>
+        <a href="#cat-social">Social</a>
+        <a href="#cat-roblox">Roblox</a>
+        <div class="docs-nav-label">Administración</div>
+        <a href="#cat-config">Configuración</a>
+        <a href="#cat-moderation">Moderación</a>
+      </nav>
+
+      <!-- Main -->
+      <div class="docs-main">
+
+        <div class="filter-row">
+          <button class="filter-chip active" data-filter="all">Todos</button>
+          <button class="filter-chip" data-filter="user">Usuario</button>
+          <button class="filter-chip" data-filter="admin">Administrador</button>
+        </div>
+
+        <div class="no-results" id="no-results">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <p>Ningún comando coincide con tu búsqueda.</p>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="docs-cat" id="cat-general">
+          <div class="docs-cat-head"><h2>General</h2><span class="tally">8 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!help" data-desc="lista de comandos ayuda" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!help</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra la lista de comandos disponibles y su categoría.</p>
+              <div class="cmd-usage">!help [comando]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !help balance</div>
+            </div>
+
+            <div class="cmd-card" data-name="!ping" data-desc="latencia velocidad respuesta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!ping</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra la latencia actual del bot.</p>
+              <div class="cmd-usage">!ping</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !ping</div>
+            </div>
+
+            <div class="cmd-card" data-name="!uptime" data-desc="tiempo activo bot online" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!uptime</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra cuánto tiempo lleva Xephora en línea.</p>
+              <div class="cmd-usage">!uptime</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !uptime</div>
+            </div>
+
+            <div class="cmd-card" data-name="!botinfo" data-desc="informacion del bot version" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!botinfo</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra información general sobre Xephora.</p>
+              <div class="cmd-usage">!botinfo</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !botinfo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!invite" data-desc="invitar bot añadir servidor" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!invite</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Envía el enlace para añadir Xephora a otro servidor.</p>
+              <div class="cmd-usage">!invite</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !invite</div>
+            </div>
+
+            <div class="cmd-card" data-name="!serverinfo" data-desc="informacion del servidor" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!serverinfo</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra información general del servidor actual.</p>
+              <div class="cmd-usage">!serverinfo</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !serverinfo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!userinfo" data-desc="informacion de usuario perfil" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!userinfo</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra información de un usuario del servidor.</p>
+              <div class="cmd-usage">!userinfo [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !userinfo @Ana</div>
+            </div>
+
+            <div class="cmd-card" data-name="!avatar" data-desc="avatar foto perfil roblox discord" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!avatar</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra el avatar de un usuario en tamaño completo.</p>
+              <div class="cmd-usage">!avatar [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !avatar @Ana</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ECONOMY -->
+        <div class="docs-cat" id="cat-economy">
+          <div class="docs-cat-head"><h2>Economía</h2><span class="tally">8 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!balance" data-desc="caps saldo dinero economia" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!balance</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra tu saldo actual de Caps.</p>
+              <div class="cmd-usage">!balance [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !balance</div>
+            </div>
+
+            <div class="cmd-card" data-name="!daily" data-desc="recompensa diaria caps" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!daily</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Reclama tu recompensa diaria de Caps.</p>
+              <div class="cmd-usage">!daily</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !daily</div>
+            </div>
+
+            <div class="cmd-card" data-name="!work" data-desc="trabajar ganar caps" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!work</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Trabaja para ganar una cantidad aleatoria de Caps.</p>
+              <div class="cmd-usage">!work</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !work</div>
+            </div>
+
+            <div class="cmd-card" data-name="!pay" data-desc="pagar enviar transferir caps" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!pay</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Envía Caps a otro miembro del servidor.</p>
+              <div class="cmd-usage">!pay @usuario [cantidad]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !pay @Ana 200</div>
+            </div>
+
+            <div class="cmd-card" data-name="!shop" data-desc="tienda comprar objetos" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!shop</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra los artículos disponibles en la tienda del servidor.</p>
+              <div class="cmd-usage">!shop</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !shop</div>
+            </div>
+
+            <div class="cmd-card" data-name="!buy" data-desc="comprar tienda articulo" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!buy</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Compra un artículo de la tienda del servidor.</p>
+              <div class="cmd-usage">!buy [artículo]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !buy VIP</div>
+            </div>
+
+            <div class="cmd-card" data-name="!inventory" data-desc="inventario objetos comprados" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!inventory</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra los artículos que has comprado.</p>
+              <div class="cmd-usage">!inventory</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !inventory</div>
+            </div>
+
+            <div class="cmd-card" data-name="!leaderboard" data-desc="ranking top caps economia" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!leaderboard</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra el ranking de Caps del servidor.</p>
+              <div class="cmd-usage">!leaderboard</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !leaderboard</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GAMES -->
+        <div class="docs-cat" id="cat-games">
+          <div class="docs-cat-head"><h2>Juegos</h2><span class="tally">7 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!blackjack !bj" data-desc="blackjack cartas 21 apuesta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!bj</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Juega una mano de blackjack contra Xephora.</p>
+              <div class="cmd-usage">!bj [apuesta]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !bj 500</div>
+            </div>
+
+            <div class="cmd-card" data-name="!poker" data-desc="poker cartas apuesta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!poker</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Juega una mano de poker contra la casa.</p>
+              <div class="cmd-usage">!poker [apuesta]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !poker 250</div>
+            </div>
+
+            <div class="cmd-card" data-name="!coinflip" data-desc="cara cruz moneda apuesta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!coinflip</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Lanza una moneda y apuesta a cara o cruz.</p>
+              <div class="cmd-usage">!coinflip [apuesta] [cara/cruz]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !coinflip 100 cara</div>
+            </div>
+
+            <div class="cmd-card" data-name="!dice" data-desc="dados apuesta multiplicador" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!dice</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Tira los dados contra Xephora por Caps.</p>
+              <div class="cmd-usage">!dice [apuesta]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !dice 200</div>
+            </div>
+
+            <div class="cmd-card" data-name="!slots" data-desc="tragamonedas slots simbolos" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!slots</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Gira la tragamonedas y busca la combinación ganadora.</p>
+              <div class="cmd-usage">!slots [apuesta]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !slots 300</div>
+            </div>
+
+            <div class="cmd-card" data-name="!roulette" data-desc="ruleta rojo negro verde numero" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!roulette</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Apuesta en la ruleta a un color o número.</p>
+              <div class="cmd-usage">!roulette [apuesta] [color/número]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !roulette 150 rojo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!horse" data-desc="carrera caballos horse racing" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!horse</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Apuesta por un caballo en la carrera.</p>
+              <div class="cmd-usage">!horse [apuesta] [caballo]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !horse 400 3</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- LEVELS -->
+        <div class="docs-cat" id="cat-levels">
+          <div class="docs-cat-head"><h2>Levels</h2><span class="tally">2 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!level" data-desc="nivel xp experiencia" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!level</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra tu nivel y XP actual.</p>
+              <div class="cmd-usage">!level [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !level</div>
+            </div>
+
+            <div class="cmd-card" data-name="!rank" data-desc="rango posicion ranking nivel" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!rank</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra tu posición en el ranking de niveles.</p>
+              <div class="cmd-usage">!rank [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !rank</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="docs-cat" id="cat-social">
+          <div class="docs-cat-head"><h2>Social</h2><span class="tally">3 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!profile" data-desc="perfil usuario resumen" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!profile</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra tu perfil con balance, nivel e invites.</p>
+              <div class="cmd-usage">!profile [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !profile</div>
+            </div>
+
+            <div class="cmd-card" data-name="!invites" data-desc="invitaciones reales falsas server" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!invites</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra tus invitaciones reales, falsas y bonus.</p>
+              <div class="cmd-usage">!invites [@usuario]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !invites</div>
+            </div>
+
+            <div class="cmd-card" data-name="!afk" data-desc="ausente estado motivo" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!afk</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Marca tu estado como AFK con un motivo opcional.</p>
+              <div class="cmd-usage">!afk [motivo]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !afk Comiendo</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ROBLOX -->
+        <div class="docs-cat" id="cat-roblox">
+          <div class="docs-cat-head"><h2>Roblox</h2><span class="tally">6 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="!roblox" data-desc="roblox cuenta perfil consulta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!roblox</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Consulta la información pública de una cuenta de Roblox.</p>
+              <div class="cmd-usage">!roblox [username]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !roblox jugador_ejemplo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!robloxid" data-desc="roblox id numero cuenta" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!robloxid</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra el ID numérico de una cuenta de Roblox.</p>
+              <div class="cmd-usage">!robloxid [username]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !robloxid jugador_ejemplo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!lookup" data-desc="buscar roblox cuenta username" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!lookup</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Busca una cuenta de Roblox por nombre de usuario.</p>
+              <div class="cmd-usage">!lookup [username]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !lookup jugador_ejemplo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!linkroblox" data-desc="vincular enlazar cuenta roblox" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!linkroblox</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Vincula tu cuenta de Roblox a tu perfil de Discord.</p>
+              <div class="cmd-usage">!linkroblox [username]</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !linkroblox jugador_ejemplo</div>
+            </div>
+
+            <div class="cmd-card" data-name="!unlinkroblox" data-desc="desvincular quitar cuenta roblox" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!unlinkroblox</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Elimina la vinculación con tu cuenta de Roblox.</p>
+              <div class="cmd-usage">!unlinkroblox</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !unlinkroblox</div>
+            </div>
+
+            <div class="cmd-card" data-name="!myroblox" data-desc="mi cuenta roblox vinculada" data-audience="user">
+              <div class="cmd-top"><span class="cmd-name">!myroblox</span><span class="badge user">Usuario</span></div>
+              <p class="cmd-desc">Muestra la cuenta de Roblox vinculada a tu perfil.</p>
+              <div class="cmd-usage">!myroblox</div>
+              <div class="cmd-example"><b>Ejemplo:</b> !myroblox</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CONFIG / ADMIN -->
+        <div class="docs-cat" id="cat-config">
+          <div class="docs-cat-head"><h2>Configuración</h2><span class="tally">11 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="/xephora" data-desc="configuracion general roles admin" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/xephora</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Panel de configuración general del bot para el servidor.</p>
+              <div class="cmd-usage">/xephora</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /xephora</div>
+            </div>
+
+            <div class="cmd-card" data-name="/xephora configrol" data-desc="roles administradores permisos" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/xephora configrol</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Define qué roles pueden administrar al bot.</p>
+              <div class="cmd-usage">/xephora configrol role:@Rol</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /xephora configrol role:@Staff</div>
+            </div>
+
+            <div class="cmd-card" data-name="/xephora language" data-desc="idioma español ingles" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/xephora language</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Cambia el idioma del bot para este servidor.</p>
+              <div class="cmd-usage">/xephora language value:Español</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /xephora language value:English</div>
+            </div>
+
+            <div class="cmd-card" data-name="/xephora prefix" data-desc="prefijo cambiar comandos texto" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/xephora prefix</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Cambia el prefijo de los comandos de texto del servidor.</p>
+              <div class="cmd-usage">/xephora prefix value:!</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /xephora prefix value:?</div>
+            </div>
+
+            <div class="cmd-card" data-name="/economy" data-desc="configurar economia moneda nombre" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/economy</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura la moneda, tienda y ajustes de economía del servidor.</p>
+              <div class="cmd-usage">/economy</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /economy give user:@Ana amount:1000</div>
+            </div>
+
+            <div class="cmd-card" data-name="/levels" data-desc="configurar niveles roles xp" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/levels</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura el sistema de niveles y roles automáticos.</p>
+              <div class="cmd-usage">/levels</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /levels</div>
+            </div>
+
+            <div class="cmd-card" data-name="/welcome" data-desc="configurar bienvenida embed canal" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/welcome</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura el mensaje y canal de bienvenida.</p>
+              <div class="cmd-usage">/welcome</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /welcome</div>
+            </div>
+
+            <div class="cmd-card" data-name="/automessage" data-desc="mensajes automaticos intervalo" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/automessage</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura mensajes automáticos y su intervalo.</p>
+              <div class="cmd-usage">/automessage</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /automessage</div>
+            </div>
+
+            <div class="cmd-card" data-name="/autorespond" data-desc="respuestas automaticas trigger" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/autorespond</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura triggers y respuestas automáticas.</p>
+              <div class="cmd-usage">/autorespond</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /autorespond</div>
+            </div>
+
+            <div class="cmd-card" data-name="/games" data-desc="configurar juegos limites apuestas" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/games</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura límites de apuesta y disponibilidad de juegos.</p>
+              <div class="cmd-usage">/games</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /games</div>
+            </div>
+
+            <div class="cmd-card" data-name="/logs" data-desc="configurar canal de logs registro" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/logs</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Configura el canal y los eventos que se registran.</p>
+              <div class="cmd-usage">/logs</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /logs</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MODERATION -->
+        <div class="docs-cat" id="cat-moderation">
+          <div class="docs-cat-head"><h2>Moderación</h2><span class="tally">5 comandos</span></div>
+          <div class="cmd-grid">
+
+            <div class="cmd-card" data-name="/kick" data-desc="expulsar usuario servidor" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/kick</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Expulsa a un miembro del servidor.</p>
+              <div class="cmd-usage">/kick user:@Usuario reason:Motivo</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /kick user:@Ana reason:Spam</div>
+            </div>
+
+            <div class="cmd-card" data-name="/ban" data-desc="banear usuario servidor" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/ban</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Banea a un miembro del servidor.</p>
+              <div class="cmd-usage">/ban user:@Usuario reason:Motivo</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /ban user:@Ana reason:Spam</div>
+            </div>
+
+            <div class="cmd-card" data-name="/timeout" data-desc="silenciar restringir tiempo" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/timeout</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Restringe temporalmente a un miembro del servidor.</p>
+              <div class="cmd-usage">/timeout user:@Usuario duration:10m</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /timeout user:@Ana duration:10m</div>
+            </div>
+
+            <div class="cmd-card" data-name="/warn" data-desc="advertencia amonestar usuario" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/warn</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Registra una advertencia sobre un miembro.</p>
+              <div class="cmd-usage">/warn user:@Usuario reason:Motivo</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /warn user:@Ana reason:Lenguaje ofensivo</div>
+            </div>
+
+            <div class="cmd-card" data-name="/warnings" data-desc="ver advertencias historial" data-audience="admin">
+              <div class="cmd-top"><span class="cmd-name">/warnings</span><span class="badge admin">Admin</span></div>
+              <p class="cmd-desc">Muestra el historial de advertencias de un miembro.</p>
+              <div class="cmd-usage">/warnings user:@Usuario</div>
+              <div class="cmd-example"><b>Ejemplo:</b> /warnings user:@Ana</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">X</span>Xephora</a>
+        <p>Un bot de Discord todo-en-uno: economía, juegos, niveles y automatización para tu comunidad.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="index.html#features">Funciones</a></li>
+          <li><a href="index.html#economy">Economía</a></li>
+          <li><a href="index.html#games">Juegos</a></li>
+          <li><a href="index.html#config">Configuración</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="docs.html">Comandos</a></li>
+          <li><a href="index.html#variables">Variables</a></li>
+          <li><a href="index.html#moderation">Moderación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Xephora</h4>
+        <ul>
+          <li><a href="index.html#support">Soporte</a></li>
+          <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+          <li><a href="#">Invitar al bot</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacidad</a></li>
+          <li><a href="terms.html">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Xephora. Todos los derechos reservados.</span>
+      <span class="status"><span class="dot"></span>Todos los sistemas operativos</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

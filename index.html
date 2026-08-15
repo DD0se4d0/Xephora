@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xephora — Tu Discord, más inteligente</title>
+<meta name="description" content="Xephora es un bot de Discord todo-en-uno: economía, juegos, niveles, bienvenidas, automatizaciones, Roblox y moderación en un solo lugar.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================= NAV ============================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">X</span>
+      Xephora
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#features">Funciones</a></li>
+      <li><a href="index.html#economy">Economía</a></li>
+      <li><a href="index.html#games">Juegos</a></li>
+      <li><a href="docs.html">Comandos</a></li>
+      <li><a href="index.html#config">Configuración</a></li>
+      <li><a href="index.html#support">Soporte</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#support" class="btn btn-ghost btn-sm">Soporte</a>
+      <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+      <a href="#" class="btn btn-primary btn-sm">Añadir a Discord</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero">
+  <svg class="hero-splatter" viewBox="0 0 600 600" fill="none">
+    <circle cx="420" cy="160" r="180" fill="#D4A72C" opacity="0.14"/>
+    <circle cx="500" cy="90" r="14" fill="#D4A72C" opacity="0.35"/>
+    <circle cx="300" cy="60" r="7" fill="#C0392B" opacity="0.4"/>
+    <circle cx="460" cy="260" r="22" fill="#D4A72C" opacity="0.22"/>
+    <circle cx="200" cy="140" r="5" fill="#D4A72C" opacity="0.5"/>
+    <circle cx="540" cy="220" r="9" fill="#C0392B" opacity="0.3"/>
+  </svg>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy reveal in">
+        <span class="eyebrow">Bot de Discord todo-en-uno</span>
+        <h1>Tu Discord,<br><span class="accent">más inteligente.</span></h1>
+        <p class="lede">Economía, juegos, niveles, bienvenidas, automatizaciones, integración con Roblox y moderación — todo en un solo bot, configurable server por server.</p>
+        <div class="hero-actions">
+          <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+          <a href="#" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.245.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.029 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/></svg>
+            Añadir Xephora
+          </a>
+          <a href="docs.html" class="btn btn-ghost">Ver comandos</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num"><span class="dot"></span><span data-count="2400" data-suffix="+">0</span></div>
+            <div class="label">Servidores</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span data-count="50" data-suffix="+">0</span></div>
+            <div class="label">Comandos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span data-count="120" data-suffix="ms">0</span></div>
+            <div class="label">Latencia media</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span data-count="99.9" data-decimals="1" data-suffix="%">0</span></div>
+            <div class="label">Uptime</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual embed-stack reveal in" aria-hidden="true">
+        <div class="embed embed-float">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora</span></div>
+          <div class="embed-title">💰 Balance</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Caps</div><div class="fv gold">2,500</div></div>
+            <div class="embed-field"><div class="fk">Banco</div><div class="fv">8,120</div></div>
+          </div>
+          <div class="embed-footer">Recompensa diaria disponible en 4h 12m</div>
+        </div>
+        <div class="embed embed-red embed-float" style="animation-delay:-2.4s">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · Blackjack</span></div>
+          <div class="embed-title">🃏 !bj 500</div>
+          <div class="embed-desc">Tu mano: 20 · Crupier: 17</div>
+          <div class="embed-footer">Has ganado +500 Caps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee-wrap">
+  <p class="marquee-label">Economía · Juegos · Niveles · Bienvenidas · Automatización · Roblox · Moderación</p>
+</div>
+
+<!-- ============================= FEATURES OVERVIEW ============================= -->
+<section id="features">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Todo en un bot</span>
+      <h2>Funciones</h2>
+      <p>Cada sistema es independiente, configurable por servidor y pensado para comunidades reales.</p>
+    </div>
+    <div class="feature-grid">
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h4.5a1.5 1.5 0 0 1 0 3H9"/></svg></div>
+        <h3>Economía</h3>
+        <p>Un sistema de moneda propia para cada servidor.</p>
+        <ul>
+          <li>Caps, daily y work</li>
+          <li>Pagos entre usuarios</li>
+          <li>Tienda e inventario</li>
+          <li>Leaderboards</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+        <h3>Juegos</h3>
+        <p>Siete juegos con apuestas en Caps.</p>
+        <ul>
+          <li>Blackjack y poker</li>
+          <li>Coinflip y dados</li>
+          <li>Slots y ruleta</li>
+          <li>Carreras de caballos</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <h3>Levels</h3>
+        <p>Sistema de experiencia por texto y voz.</p>
+        <ul>
+          <li>XP, niveles y rangos</li>
+          <li>Voice XP</li>
+          <li>Roles por nivel</li>
+          <li>Leaderboard</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+        <h3>Social</h3>
+        <p>Perfiles, AFK, invites e información.</p>
+        <ul>
+          <li>Perfil de usuario</li>
+          <li>Estado AFK</li>
+          <li>Sistema de invites</li>
+          <li>Info de servidor</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l2.5 2.5L16 9"/></svg></div>
+        <h3>Roblox</h3>
+        <p>Vincula y consulta cuentas de Roblox.</p>
+        <ul>
+          <li>Lookup por username</li>
+          <li>Avatar e ID</li>
+          <li>Vinculación de cuenta</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg></div>
+        <h3>Automatización</h3>
+        <p>Bienvenidas, mensajes y respuestas automáticas.</p>
+        <ul>
+          <li>Welcome con embeds</li>
+          <li>AutoMessage por intervalos</li>
+          <li>AutoRespond por triggers</li>
+          <li>Variables dinámicas</li>
+        </ul>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3.2 7.7-8 9-4.8-1.3-8-4.5-8-9V7l8-4z"/></svg></div>
+        <h3>Moderación</h3>
+        <p>Herramientas de control y registro completo.</p>
+        <ul>
+          <li>Kick, ban, timeout</li>
+          <li>Warns y warnings</li>
+          <li>Logs detallados</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= ECONOMY ============================= -->
+<section id="economy" class="section-alt">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-copy">
+        <span class="eyebrow">Economía</span>
+        <h2>Una moneda propia para cada servidor.</h2>
+        <p>Cada servidor tiene su propia economía, aislada del resto. Los miembros ganan, gastan y apuestan Caps sin que nada se mezcle entre comunidades.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Daily y work</b> — reclama tu recompensa diaria o trabaja para ganar Caps.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Pagos entre usuarios</b> — envía Caps a cualquier miembro del servidor.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Tienda e inventario</b> — compra artículos configurados por los administradores.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Leaderboard</b> — compite por el top de Caps del servidor.</span></li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">!balance</span>
+          <span class="chip">!daily</span>
+          <span class="chip">!work</span>
+          <span class="chip">!pay</span>
+          <span class="chip">!shop</span>
+        </div>
+      </div>
+      <div class="split-visual embed-stack">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora</span></div>
+          <div class="embed-title">💰 Balance</div>
+          <div class="embed-desc">2,500 Caps</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Recompensa diaria</div><div class="fv gold">+500 Caps</div></div>
+            <div class="embed-field"><div class="fk">Racha</div><div class="fv">6 días</div></div>
+          </div>
+        </div>
+        <div class="embed embed-green">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora</span></div>
+          <div class="embed-title">💼 Work</div>
+          <div class="embed-desc">Has trabajado como Desarrollador.</div>
+          <div class="embed-footer">+125 Caps</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:80px;">
+      <span class="eyebrow">Moneda configurable</span>
+      <h3 style="font-size:1.4rem; margin-top:10px; text-transform:none; font-family:var(--font-body); font-weight:700;">El nombre de la moneda lo elige cada servidor</h3>
+    </div>
+    <div class="chip-row">
+      <span class="chip">Cap / Caps</span>
+      <span class="chip">Credit / Credits</span>
+      <span class="chip">Coin / Coins</span>
+      <span class="chip">+ nombre personalizado</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= GAMES ============================= -->
+<section id="games">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Juegos</span>
+      <h2>Apuesta tus Caps</h2>
+      <p>Siete juegos distintos, todos con apuestas configurables y resultados instantáneos en el chat.</p>
+    </div>
+    <div class="game-grid">
+      <div class="game-card reveal" data-cmd="!bj 500">
+        <span class="gicon">🃏</span>
+        <h3>Blackjack</h3>
+        <p>Hit, stand o double. Vence al 21 del crupier para ganar tu apuesta.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!poker 250">
+        <span class="gicon">♠️</span>
+        <h3>Poker</h3>
+        <p>Juega manos contra la casa y gana según la fuerza de tu combinación.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!coinflip 100 cara">
+        <span class="gicon">🪙</span>
+        <h3>Coinflip</h3>
+        <p>Cara o cruz. Elige un lado, apuesta y duplica o pierde al instante.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!dice 200">
+        <span class="gicon">🎲</span>
+        <h3>Dice</h3>
+        <p>Tira los dados contra Xephora. Multiplicadores según el resultado.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!slots 300">
+        <span class="gicon">🎰</span>
+        <h3>Slots</h3>
+        <p>Alinea símbolos para ganar multiplicadores sobre tu apuesta.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!roulette 150 rojo">
+        <span class="gicon">🎡</span>
+        <h3>Roulette</h3>
+        <p>Apuesta a rojo, negro, verde o a un número exacto.</p>
+      </div>
+      <div class="game-card reveal" data-cmd="!horse 400 3">
+        <span class="gicon">🐎</span>
+        <h3>Horse Racing</h3>
+        <p>Elige tu caballo y sigue la carrera en vivo dentro del chat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= LEVELS ============================= -->
+<section id="levels" class="section-alt">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div class="split-visual embed-stack">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora</span></div>
+          <div class="embed-title">⭐ Rank</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Nivel</div><div class="fv gold">14</div></div>
+            <div class="embed-field"><div class="fk">Rango</div><div class="fv">#3</div></div>
+            <div class="embed-field"><div class="fk">XP</div><div class="fv">3,240 / 4,000</div></div>
+            <div class="embed-field"><div class="fk">Voice XP</div><div class="fv">1,180</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="split-copy">
+        <span class="eyebrow">Levels</span>
+        <h2>Cada servidor, su propia progresión.</h2>
+        <p>El sistema de niveles recompensa la actividad en texto y voz, con roles automáticos y un leaderboard propio por servidor.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>XP por texto y voz</b> — ambos suman de forma independiente.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Roles por nivel</b> — asigna roles automáticamente al subir de nivel.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Multiplicadores</b> — configura canales o roles con XP extra.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Leaderboard</b> — el ranking completo del servidor, siempre actualizado.</span></li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">!level</span>
+          <span class="chip">!rank</span>
+          <span class="chip">!leaderboard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= WELCOME ============================= -->
+<section id="welcome">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-copy">
+        <span class="eyebrow">Welcome</span>
+        <h2>Recibe a cada miembro como se merece.</h2>
+        <p>Diseña el mensaje de bienvenida con embeds personalizados, imágenes y variables dinámicas — sin escribir una sola línea de código.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Embeds personalizados</b> — título, descripción, color y campos propios.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Imágenes y thumbnail</b> — usa banners o el avatar del nuevo miembro.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Canal configurable</b> — elige dónde se publica cada bienvenida.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Variables</b> — {user}, {server}, {membercount} y más.</span></li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · Welcome</span></div>
+          <div class="embed-title">👋 ¡Bienvenido a Loja Gamers!</div>
+          <div class="embed-desc">@nuevo_usuario acaba de unirse. Ya somos 4,821 miembros.</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Miembro Nº</div><div class="fv gold">4,821</div></div>
+            <div class="embed-field"><div class="fk">Canal</div><div class="fv">#bienvenidas</div></div>
+          </div>
+          <div class="embed-footer">Xephora · Sistema de bienvenidas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= AUTOMESSAGE + AUTORESPOND ============================= -->
+<section id="automation" class="section-alt">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Automatización</span>
+      <h2>Mensajes que se envían solos</h2>
+      <p>Programa contenido recurrente y respuestas automáticas sin depender de nadie del staff.</p>
+    </div>
+
+    <div class="split reveal" style="margin-bottom:70px;">
+      <div class="split-copy">
+        <h3 style="text-transform:none; font-family:var(--font-body); font-weight:700; font-size:1.3rem; margin-bottom:14px;">AutoMessage</h3>
+        <p style="margin-bottom:20px;">Publica mensajes automáticos en un intervalo definido, con múltiples variantes que rotan al azar.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Intervalos configurables por canal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Varios mensajes con selección aleatoria</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Soporta texto plano y embeds</span></li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · AutoMessage</span></div>
+          <div class="embed-title">📢 Recuerda votar por el servidor</div>
+          <div class="embed-desc">Cada voto ayuda a que más gente encuentre {server}.</div>
+          <div class="embed-footer">Se repite cada 3 horas · #anuncios</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reverse reveal">
+      <div class="split-visual">
+        <div class="embed embed-green">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · AutoRespond</span></div>
+          <div class="embed-title">Trigger: hello</div>
+          <div class="embed-desc">Response: Welcome {user} to {server}!</div>
+          <div class="embed-footer">Modo: contains · Coincidencia sin distinguir mayúsculas</div>
+        </div>
+      </div>
+      <div class="split-copy">
+        <h3 style="text-transform:none; font-family:var(--font-body); font-weight:700; font-size:1.3rem; margin-bottom:14px;">AutoRespond</h3>
+        <p style="margin-bottom:20px;">Define palabras o frases que activan una respuesta automática, en texto plano o embed.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Exact</b> — coincidencia exacta del mensaje</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Contains</b> — coincidencia parcial dentro del mensaje</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Respuestas aleatorias</b> — varias respuestas por trigger</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= VARIABLES ============================= -->
+<section id="variables">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Variables</span>
+      <h2>Contenido dinámico en cualquier sistema</h2>
+      <p>Usa estas variables en Welcome, AutoMessage y AutoRespond para personalizar cada mensaje.</p>
+    </div>
+    <div class="var-groups">
+      <div class="var-group reveal">
+        <h4>General</h4>
+        <ul>
+          <li><code>{user}</code></li>
+          <li><code>{username}</code></li>
+          <li><code>{displayname}</code></li>
+          <li><code>{mention}</code></li>
+          <li><code>{avatar}</code></li>
+          <li><code>{server}</code></li>
+          <li><code>{membercount}</code></li>
+          <li><code>{channel}</code></li>
+          <li><code>{role}</code></li>
+          <li><code>{prefix}</code></li>
+        </ul>
+      </div>
+      <div class="var-group reveal">
+        <h4>Economía</h4>
+        <ul>
+          <li><code>{balance}</code></li>
+          <li><code>{caps}</code></li>
+          <li><code>{currency}</code></li>
+          <li><code>{currency_singular}</code></li>
+          <li><code>{currency_plural}</code></li>
+          <li><code>{currency_emoji}</code></li>
+        </ul>
+        <h4 style="margin-top:20px;">Levels</h4>
+        <ul>
+          <li><code>{level}</code></li>
+          <li><code>{xp}</code></li>
+          <li><code>{nextlevel}</code></li>
+          <li><code>{rank}</code></li>
+        </ul>
+      </div>
+      <div class="var-group reveal">
+        <h4>Invites</h4>
+        <ul>
+          <li><code>{invites}</code></li>
+          <li><code>{realinvites}</code></li>
+          <li><code>{fakeinvites}</code></li>
+          <li><code>{leftinvites}</code></li>
+          <li><code>{bonusinvites}</code></li>
+        </ul>
+        <h4 style="margin-top:20px;">Tiempo</h4>
+        <ul>
+          <li><code>{date}</code></li>
+          <li><code>{time}</code></li>
+          <li><code>{timestamp}</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= ROBLOX ============================= -->
+<section id="roblox" class="section-alt">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-copy">
+        <span class="eyebrow">Roblox</span>
+        <h2>Conecta Discord con Roblox.</h2>
+        <p>Consulta cuentas de Roblox y permite que los miembros vinculen su cuenta a su perfil de Discord.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Lookup</b> — busca cualquier cuenta por username</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Avatar e ID</b> — consulta rápida de datos públicos</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Vinculación</b> — cada usuario enlaza su propia cuenta</span></li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">!roblox username</span>
+          <span class="chip">!avatar username</span>
+          <span class="chip">!robloxid username</span>
+          <span class="chip">!linkroblox username</span>
+          <span class="chip">!myroblox</span>
+        </div>
+      </div>
+      <div class="split-visual">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · Roblox</span></div>
+          <div class="embed-title">🎮 Roblox Lookup</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Username</div><div class="fv">jugador_ejemplo</div></div>
+            <div class="embed-field"><div class="fk">Roblox ID</div><div class="fv gold">•••••••</div></div>
+          </div>
+          <div class="embed-footer">Consulta pública · Sin credenciales requeridas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= INVITES + AFK ============================= -->
+<section id="invites">
+  <div class="container">
+    <div class="split reverse reveal" style="margin-bottom:70px;">
+      <div class="split-visual">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · Invites</span></div>
+          <div class="embed-title">📨 Invites</div>
+          <div class="embed-fields">
+            <div class="embed-field"><div class="fk">Total</div><div class="fv gold">34</div></div>
+            <div class="embed-field"><div class="fk">Reales</div><div class="fv">28</div></div>
+            <div class="embed-field"><div class="fk">Falsas</div><div class="fv">4</div></div>
+            <div class="embed-field"><div class="fk">Salidas</div><div class="fv">2</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="split-copy">
+        <span class="eyebrow">Invites</span>
+        <h2>Sabe quién trae gente de verdad.</h2>
+        <p>Xephora registra las invitaciones de cada servidor por separado, distinguiendo entre reales, falsas y bonus.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Real / fake / left</b> — detección automática de invites de baja calidad</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Bonus</b> — invitaciones extra asignadas manualmente</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Leaderboard</b> — ranking de invitadores del servidor</span></li>
+        </ul>
+        <div class="chip-row"><span class="chip">!invites</span></div>
+      </div>
+    </div>
+
+    <div class="split reveal" id="afk">
+      <div class="split-copy">
+        <span class="eyebrow">AFK</span>
+        <h2>Que el servidor sepa que no estás.</h2>
+        <p>Marca tu estado como ausente con un motivo opcional. Xephora avisa a quien te mencione y quita el estado en cuanto vuelves a escribir.</p>
+        <ul class="split-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Motivo opcional</b> — deja saber por qué estás AFK</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Detección de menciones</b> — avisa a quien te etiquete</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Remoción automática</b> — se quita solo al volver a escribir</span></li>
+        </ul>
+        <div class="chip-row"><span class="chip">!afk [motivo]</span></div>
+      </div>
+      <div class="split-visual">
+        <div class="embed">
+          <div class="embed-author"><span class="embed-avatar"></span><span>Xephora · AFK</span></div>
+          <div class="embed-title">💤 AFK activado</div>
+          <div class="embed-desc">Motivo: Comiendo — vuelvo en un rato</div>
+          <div class="embed-footer">AFK desde hace 12 minutos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= MODERATION + LOGS ============================= -->
+<section id="moderation" class="section-alt">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Moderación</span>
+      <h2>Control total, con registro de todo.</h2>
+      <p>Las herramientas básicas de moderación, respaldadas por un sistema de logs que no se pierde nada.</p>
+    </div>
+
+    <div class="chip-row" style="justify-content:center; margin-bottom:60px;">
+      <span class="chip">/kick</span>
+      <span class="chip">/ban</span>
+      <span class="chip">/timeout</span>
+      <span class="chip">/warn</span>
+      <span class="chip">/warnings</span>
+    </div>
+
+    <div class="section-head centered reveal" style="margin-bottom:26px;">
+      <h3 style="font-size:1.3rem;">Logs disponibles</h3>
+    </div>
+    <div class="log-grid">
+      <div class="log-pill">Member Join</div>
+      <div class="log-pill">Member Leave</div>
+      <div class="log-pill">Ban / Unban</div>
+      <div class="log-pill">Warn</div>
+      <div class="log-pill">Timeout</div>
+      <div class="log-pill">Message Delete</div>
+      <div class="log-pill">Message Edit</div>
+      <div class="log-pill">Channel Create</div>
+      <div class="log-pill">Channel Delete</div>
+      <div class="log-pill">Channel Update</div>
+      <div class="log-pill">Role Create</div>
+      <div class="log-pill">Role Delete</div>
+      <div class="log-pill">Role Update</div>
+      <div class="log-pill">Voice Join</div>
+      <div class="log-pill">Voice Leave</div>
+      <div class="log-pill">Voice Move</div>
+      <div class="log-pill">Bot Add</div>
+      <div class="log-pill">Security</div>
+      <div class="log-pill">Economy</div>
+      <div class="log-pill">Levels</div>
+      <div class="log-pill">Invites</div>
+      <div class="log-pill">Welcome</div>
+      <div class="log-pill">Auto Systems</div>
+      <div class="log-pill">Configuración</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= CONFIG + LANGUAGE ============================= -->
+<section id="config">
+  <div class="container">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">Configuración</span>
+      <h2>Cada servidor, a su medida.</h2>
+      <p>Todo lo que hace Xephora se ajusta de forma independiente por servidor, sin afectar a ningún otro.</p>
+    </div>
+    <div class="config-grid reveal">
+      <div class="config-row"><span class="ck">Prefix</span><span class="cv">!prefix set</span></div>
+      <div class="config-row"><span class="ck">Idioma</span><span class="cv">/xephora language</span></div>
+      <div class="config-row"><span class="ck">Moneda</span><span class="cv">/economy</span></div>
+      <div class="config-row"><span class="ck">Juegos</span><span class="cv">/games</span></div>
+      <div class="config-row"><span class="ck">Levels</span><span class="cv">/levels</span></div>
+      <div class="config-row"><span class="ck">Welcome</span><span class="cv">/welcome</span></div>
+      <div class="config-row"><span class="ck">AutoMessage</span><span class="cv">/automessage</span></div>
+      <div class="config-row"><span class="ck">AutoRespond</span><span class="cv">/autorespond</span></div>
+      <div class="config-row"><span class="ck">Logs</span><span class="cv">/logs</span></div>
+      <div class="config-row"><span class="ck">Roles admin</span><span class="cv">/xephora configrol</span></div>
+    </div>
+
+    <div class="section-head" style="margin-top:80px; margin-bottom:24px;">
+      <span class="eyebrow">Idiomas</span>
+      <h3 style="font-size:1.3rem; margin-top:10px; text-transform:none; font-family:var(--font-body); font-weight:700;">Xephora habla tu idioma</h3>
+    </div>
+    <div class="lang-strip reveal">
+      <div class="lang-card"><div class="flag">🇪🇸</div><div class="name">Español</div></div>
+      <div class="lang-card"><div class="flag">🇬🇧</div><div class="name">English</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CTA ============================= -->
+<section id="support">
+  <div class="container">
+    <div class="cta-band reveal">
+      <span class="eyebrow">Listo cuando tú lo estés</span>
+      <h2 style="margin-top:16px;">Trae Xephora a tu servidor</h2>
+      <p>Configuración en minutos. Todo se puede ajustar desde el servidor, sin necesidad de tocar código.</p>
+      <div class="cta-actions">
+        <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+        <a href="#" class="btn btn-primary">Añadir a Discord</a>
+        <!-- TODO: reemplazar por el enlace real del servidor de soporte -->
+        <a href="#" class="btn btn-ghost">Servidor de soporte</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">X</span>Xephora</a>
+        <p>Un bot de Discord todo-en-uno: economía, juegos, niveles y automatización para tu comunidad.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="index.html#features">Funciones</a></li>
+          <li><a href="index.html#economy">Economía</a></li>
+          <li><a href="index.html#games">Juegos</a></li>
+          <li><a href="index.html#config">Configuración</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="docs.html">Comandos</a></li>
+          <li><a href="index.html#variables">Variables</a></li>
+          <li><a href="index.html#moderation">Moderación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Xephora</h4>
+        <ul>
+          <li><a href="#support">Soporte</a></li>
+          <!-- TODO: reemplazar por la URL OAuth2 real del bot -->
+          <li><a href="#">Invitar al bot</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacidad</a></li>
+          <li><a href="terms.html">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Xephora. Todos los derechos reservados.</span>
+      <span class="status"><span class="dot"></span>Todos los sistemas operativos</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
